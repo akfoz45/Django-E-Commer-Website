@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#b9nc6zl0^0jxpulm$jp50q8quyuu373hl%!9b#1avcbnvp7ex
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['164.92.232.57']
 
 
 # Application definition
@@ -132,5 +132,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 STATICFIELS_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CART_SESSION_ID = 'cart'
