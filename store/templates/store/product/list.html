@@ -17,9 +17,9 @@
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row">
             <div class="col-lg-3">
-                <h1 class="my-4">Kategoriler</h1>
+                <h1 class="my-4">Categories</h1>
                 <div class="list-group">
-                    <a href="{% url 'product_list' %}" class="list-group-item {% if not category %}active{% endif %}">Tümü</a>
+                    <a href="{% url 'product_list' %}" class="list-group-item {% if not category %}active{% endif %}">All</a>
                     {% for c in categories %}
                     <a href="{% url 'product_list_by_category' c.slug %}" class="list-group-item {% if category.slug == c.slug %}active{% endif %}">{{ c.name }}</a>
                     {% endfor %}
