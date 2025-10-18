@@ -7,7 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px  
 }
+
 *,
 *:before,
 *:after{
@@ -30,8 +33,10 @@
     border-radius: 50%;
 }
 form{
-    height: 520px;
-    width: 400px;
+    /*height: auto;*/
+    /*min-height: 520px;*/
+    height: 535px;
+    width: 375px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -42,6 +47,7 @@ form{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
+    /*margin-top: 50px;*/
 }
 form *{
     font-family: 'Poppins',sans-serif;
@@ -53,19 +59,20 @@ form *{
 form h3{
     font-size: 32px;
     font-weight: 500;
-    line-height: 42px;
+    line-height: 1px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 label{
     display: block;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 16px;
     font-weight: 500;
 }
 input{
     display: block;
-    height: 50px;
+    height: 45px;
     width: 100%;
     background-color: rgba(255,255,255,0.07);
     border-radius: 3px;
@@ -78,7 +85,7 @@ input{
     color: #e5e5e5;
 }
 button{
-    margin-top: 50px;
+    margin-top: 30px;
     width: 100%;
     background-color: #ffffff;
     color: #080710;

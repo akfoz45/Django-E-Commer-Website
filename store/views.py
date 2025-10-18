@@ -33,7 +33,7 @@ def singup_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.changed_data.get('username')
+            username = form.cleaned_data.get('username')
             messages.success(request, f'An account has been created for {username}!')
             return redirect('login')
     else:

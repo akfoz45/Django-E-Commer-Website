@@ -30,7 +30,6 @@
                         </a>
                     {% endif %}
                     {% if user.is_authenticated %}
-                        <span class="navbar-text me-2">Merhaba, {{ user.username }}!</span>
                         <form action="{% url 'logout' %}" method="post" class="d-flex">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-outline-dark">Logout</button>
