@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, Product
 from cart.forms import CartAddProductForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -24,3 +26,16 @@ def product_detail(request, id, slug):
                   'store/product/detail.html',
                   {'product': product,
                    'cart_product_form': cart_product_form})
+
+
+def singup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.changed_data.get('username')
+            messages.success(request, f'An account has been created for {username}!')
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})

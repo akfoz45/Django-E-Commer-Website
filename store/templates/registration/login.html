@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/login_style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="login-container">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <h3>Login Here</h3>
+
+        <label for="{{ form.username.id_for_label }}">Username</label>
+        {{ form.username }}  <label for="{{ form.password.id_for_label }}">Password</label>
+        {{ form.password }}  <button type="submit">Log In</button>
+        
+        <p style="text-align: center; margin-top: 20px;">
+            <a href="{% url 'signup' %}" style="color: white; text-decoration: none;">Don't have an account? Sign up now!</a>
+        </p>
+    </form>
+</div>
+{% endblock %}
